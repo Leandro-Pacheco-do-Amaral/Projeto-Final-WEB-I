@@ -1,0 +1,655 @@
+@charset 'utf-8';
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Playfair Display', serif;
+    color: white;
+}
+
+#topo{
+    background-color: #0800A6;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#topo a{
+    color: white;
+}
+
+#btn_menu{
+    width: 50px;
+    height: 50px;
+    float: right;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    background-color: #0800A6;
+    border: hidden;
+    font-size: 2em;
+}
+
+#menu{
+    width:100%;
+    height: 0%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 91;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#menu:target{
+    height: 100%;
+}
+
+#btn_fechar{
+    float: right;
+    margin-top: 16px;
+    margin-right: 20px;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+#menu ul{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+#menu ul li{
+    padding: 3%;
+    font-size: 1.4em;
+    background-color: #0800a691;
+}
+
+#menu ul li:hover{
+    background-color: #392fff;
+}
+
+#botao_modal{
+    background-color: #C70700 !important;
+}
+
+#botao_modal:hover{
+    background-color: #ED0800 !important;
+}
+
+#logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/logos/logomobile.png) no-repeat center;
+    width: 20%;
+}
+
+body{
+    background-color: #0C7AF2;
+    background-image: url(../img/background1.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+#carrossel{
+    border: none;
+}
+
+#apresentacao{
+    width: 95%;
+    margin: auto;
+    background-color: #0800A6;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#autor{
+    padding: 2px;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #050066;
+}
+
+#autor h1,p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#foto{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#foto img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+#textoapresentacao{
+    padding: 20px;
+    height: 100%;
+    align-self: center;
+}
+
+#textoapresentacao p{
+    text-align: justify;
+}
+
+#servicos{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.artigo{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 20px;
+    background-color: #0800a696;
+    text-align: center;
+}
+
+#sobrewebsites h4{
+    visibility: hidden;
+    position: absolute;
+}
+
+.artigo2{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 30px;
+    text-align: justify;
+}
+
+.artigo2 a{
+    color: red;
+    font-weight: bold;
+}
+
+.artigo2 a:hover{
+    text-decoration: underline;
+}
+
+.artigo2 h2{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.artigo2 figure{
+    margin: 0 auto;
+}
+
+.artigo2 figure img{
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 5px;
+    border: 2px black solid;
+}
+
+.artigo2 button{
+    width: 180px;
+    margin: 16px auto 0 auto;
+    box-shadow: 4px 4px 3px 2px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    background: #050066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    font-size: 1.4em;
+}
+
+#fechar_modal{
+    font-size: 1.5em;
+    margin-left: 4%;
+}
+
+#cortina{
+    width: 0;
+    height: 0;
+    background-color: rgba(0,0,0,1);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+#modal{
+    visibility: hidden;
+    opacity: 0;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    margin: auto;
+    margin-top: 3%;
+    height: fit-content;
+    width: fit-content;
+}
+
+#modal form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#modal form label{
+    font-size: 1em;
+}
+
+#modal form input, #tamanhoEmpresa, #tamanhoEmpresa option{
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 1em;
+    font-weight: bolder;
+    margin: 3px;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+    color: black;
+}
+
+#mensagem{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+    color: black;
+    resize: none;
+    margin-bottom: 2%;
+}
+
+#botoesform{
+    display: flex;
+    flex-direction: row;
+}
+
+#btn_enviar, #btn_limpar, #btn_cancelar{
+    background-color: #0800A6;
+    font-size: 1.3em !important;
+    color: rgb(228, 228, 228) !important;
+    text-shadow: 2px 1px 1px rgba(0,0,0,1);
+    border: 1px solid white !important; 
+    border-radius: 5px !important;
+}
+
+#tutorialresponsividade{
+    width: 100%;
+}
+
+#tutorialresponsividade h4{
+    display: none;
+}
+
+#videoresponsividade{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoresponivdade iframe{
+    max-width: 100%;
+    object-fit: contain;
+}
+
+#contato{
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+#contato h1{
+    visibility: hidden;
+    position: absolute;
+}
+
+#contato h2{
+    font-size: 0.9em;
+}
+
+#contato i{
+    font-size: 3.5em;
+}
+
+#links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+footer{
+    background-color: #0800A6;
+    text-align: center;
+    width: 100%;
+    height: 25px;
+    padding: 10px 0;
+}
+
+/* TABLETS (A PARTIR DE 768px) */
+
+@media screen and (min-width:768px){
+    #btn_menu,#btn_fechar{
+        display: none;
+    }
+
+    #menu{
+        width: 70%;
+        position: relative;
+        background: none;
+    }
+
+    #menu ul{
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    #menu ul li{
+        font-size: 0.9em;
+    }
+
+    #logo{
+        background: url(../img/logos/logotablet.png) no-repeat center;
+        width: 27%;
+    }
+
+    #apresentacao{
+        flex-direction: row;
+        font-size: 1.5em;
+    }
+
+    #autor{
+        padding: 10px;
+        align-self: center;
+    }
+
+    #foto{
+        width: 150px;
+        height: 150px;
+    }
+
+    #servicos{
+        flex-direction: row;
+        font-size: 1.4em;
+        margin: 2.5%;
+    }
+
+    .artigo{
+        width: 50%;
+    }
+
+    .artigo2{
+        padding: 40px;   
+    }
+    
+    .artigo2 h2{
+        text-align: center;
+        font-size: 1.8em;
+    }
+
+    .artigo2 figure{
+        max-width: 75%;
+    }
+
+    .artigo2 p{
+        font-size: 1.3em;
+    }
+
+    .artigo2 button{
+        width: 30%;
+        height: 60px;
+        font-size: 1.5em;
+    }
+
+    #contato{
+        padding: 15px 0;
+    }
+
+    #links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+}
+
+/* DESKTOPS E LAPTOPS (A PARTIR DE 1024px) */
+
+@media screen and (min-width:1024px){
+    #menu ul li{
+        font-size: 1.2em;
+    }
+
+    #logo{
+        background: url(../img/logos/logo1024.png) no-repeat center;
+        width: 27%;
+    }
+
+    #foto{
+        width: 200px;
+        height: 200px;
+    }
+
+    #apresentacao{
+        font-size: 1.9em;
+    }
+
+    .artigo2{
+        padding: 50px;   
+    }
+
+    .artigo2 h2{
+        font-size: 2em;
+    }
+
+    .artigo2 figure{
+        max-width: 60%;
+    }
+
+    .artigo2 p{
+        font-size: 1.6em;
+    }
+    
+    .artigo2 button{
+        font-size: 1.8em;
+    }
+
+    #contato h1, #contato h2{
+        font-size: 1em;
+    }
+    
+    #contato i{
+        font-size: 4em;
+    }
+}
+
+/* (A PARTIR DE 1440px) */
+
+@media screen and (min-width:1440px){
+
+    #menu ul li{
+        font-size: 1.5em;
+    }
+
+    #logo{
+        background: url(../img/logos/logo1444.png) no-repeat center;
+        width: 28%;
+    }
+
+    #apresentacao{
+        font-size: 2.4em;
+    }
+
+    #autor{
+        padding: 20px;
+    }
+
+    #foto{
+        width: 250px;
+        height: 250px;
+    }
+    #servicos{
+        font-size: 1.7em;
+    }
+
+    .artigo2 h2{
+        font-size: 2.3em;
+    }
+
+    .artigo2 figure{
+        max-width: 75%;
+    }
+
+    .artigo2 p{
+        font-size: 1.8em;
+    }
+    
+    .artigo2 button{
+        font-size: 2em;
+    }
+
+    #fechar_modal{
+        font-size: 2em;
+    }
+
+    #modal form label{
+        font-size: 1.1em;
+    }
+
+    #contato h1, #contato h2{
+        font-size: 1.3em;
+    }
+    
+    #contato i{
+        font-size: 4.5em;
+    }
+}
+
+/* 1080p (A PARTIR DE 1920px) */
+
+@media screen and (min-width:1920px){
+    #logo{
+        background: url(../img/logos/logo1444.png) no-repeat center;
+        width: 22%;
+    }
+
+    .artigo2{
+        padding: 60px;   
+    }
+
+    .artigo2 h2{
+        font-size: 2.6em;
+    }
+
+    .artigo2 p{
+        font-size: 2.2em;
+    }
+    
+    .artigo2 button{
+        font-size: 2.3em;
+    }
+
+    #fechar_modal{
+        font-size: 2.5em;
+    }
+
+    #contato h1, #contato h2{
+        font-size: 2em;
+    }
+    
+    #contato i{
+        font-size: 6.5em;
+    }
+}
+
+
+/* 4K (A PARTIR DE 2560px) */
+
+@media screen and (min-width:2560px){
+
+    #menu ul li{
+        font-size: 2.5em;
+    }
+
+    #logo{
+        background: url(../img/logos/logo2560.png) no-repeat center;
+        width: 28%;
+    }
+
+    #apresentacao{
+        font-size: 3em;
+    }
+
+    #autor{
+        padding: 30px;
+    }
+
+    #foto{
+        width: 300px;
+        height: 300px;
+    }
+
+    #servicos{
+        font-size: 2.5em;
+    }
+
+    .artigo2{
+        padding: 70px;   
+    }
+
+    .artigo2 h2{
+        font-size: 3.5em;
+    }
+
+    .artigo2 p{
+        font-size: 3em;
+    }
+
+    .artigo2 button{
+        width: 300px;
+        height: 100px;
+        font-size: 3em;
+    }
+
+    #modal form label{
+        font-size: 1.5em;
+    }
+
+
+    #contato h1, #contato h2{
+        font-size: 2.5em;
+    }
+    
+    #contato i{
+        font-size: 8em;
+    }
+    
+}
