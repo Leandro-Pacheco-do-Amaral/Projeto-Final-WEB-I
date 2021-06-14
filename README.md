@@ -2,6 +2,8 @@
 O projeto final da disciplina "Desenvolvimento de Sistemas WEB I", do Curso Técnico de Informática para Internet da QI Faculdade & Escola Técnica. 
 A disciplina é focada no Front-End e foi ministrada pelo Professor Leandro Silva.
 
+Este projeto foi entregue no dia 29 de abril de 2021 (29/04/2021).
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Conteúdo da Disciplina:
